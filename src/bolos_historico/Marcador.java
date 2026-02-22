@@ -26,7 +26,7 @@ public class Marcador {
      */
     public void setBolosDerribados(int bolosDerribados) {
         if(bolosDerribados > 0 && bolosDerribados <= Jugador.getMAX_BOLOS()){
-            this.bolosDerribados = bolosDerribados;
+            this.bolosDerribados += bolosDerribados;
         }
     }
     public void aumentarRonda(){
