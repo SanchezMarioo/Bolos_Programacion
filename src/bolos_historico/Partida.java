@@ -16,7 +16,7 @@ public class Partida {
     private Marcador marcadorJ2;
     private int rondaActual;
     private int rondasTporPartida = 0;
-    static private int rondasGlobal;
+    static private int tiradasGlobal;
     private int tiradaEnRonda = 0;
     static private int partidasTotales = 0;
     /**
@@ -63,11 +63,11 @@ public class Partida {
             
         }
         tiradaEnRonda++;
+        tiradasGlobal++;
         // Se restablece y cuenta una ronda 
         if(tiradaEnRonda > 3){
             tiradaEnRonda = 0;
             rondaActual++;
-            rondasGlobal++;
         }
         return bolos;
     }
@@ -81,8 +81,8 @@ public class Partida {
     }
     
 
-    public static int getRondasGlobal() {
-        return rondasGlobal;
+    public static int getTiradasGlobal() {
+        return tiradasGlobal;
     }
     public boolean isFinalizada(){
         if(rondaActual == rondasTporPartida){

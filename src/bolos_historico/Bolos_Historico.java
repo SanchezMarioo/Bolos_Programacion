@@ -19,7 +19,7 @@ public class Bolos_Historico {
         int jugarDeNuevo;
 
         do {
-            // 1. Configuración inicial
+            // Inicializamos objetos
             String nombreJugador1 = Lectura.leerCadena("Nombre Jugador 1: ");
             int pr1 = Lectura.validarNumero("Precisión J1 (1-10): ", 1, 10);
             Jugador j1 = new Jugador(nombreJugador1, pr1);
@@ -40,13 +40,14 @@ public class Bolos_Historico {
         // 4. Estadísticas finales al salir del programa
         System.out.println("\n=== ESTADÍSTICAS GLOBALES ===");
         System.out.println("Total partidas jugadas: " + Partida.getPartidasTotales());
-        System.out.println("Total tiradas realizadas: " + Partida.getRondasGlobal());
+        System.out.println("Total tiradas realizadas: " + Partida.getTiradasGlobal());
         System.out.println("¡Gracias por jugar!");
     }
 
     private static void gestionarPartida(Partida partida) {
         int opcion;
-
+        // Se sale cuando la condicion de isFinalizada es true
+        // Es decir si las rondas actuales son iguales al maximo de rondas se sale del menu
         do {
             System.out.println("\n------ MENU PARTIDA -----");
             System.out.println("Turno de: " + partida.obtenerNombreJugador());
@@ -68,7 +69,7 @@ public class Bolos_Historico {
                 case 2 ->
                     partida.mostrarInformacion();
                 case 3 ->
-                    System.out.println("Tiradas totales en el sistema: " + Partida.getRondasGlobal());
+                    System.out.println("Tiradas totales en el sistema: " + Partida.getTiradasGlobal());
                 case 4 ->
                     System.out.println("Has abandonado la partida.");
             }
