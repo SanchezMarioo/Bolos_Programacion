@@ -62,12 +62,12 @@ public class Partida {
             marcadorJ2.aumentarRonda();
             
         }
-        rondaActual++;
-        rondasGlobal++;
         tiradaEnRonda++;
         // Se restablece
         if(tiradaEnRonda > 3){
             tiradaEnRonda = 0;
+            rondaActual++;
+            rondasGlobal++;
         }
         return bolos;
     }
