@@ -63,7 +63,7 @@ public class Partida {
             
         }
         tiradaEnRonda++;
-        // Se restablece
+        // Se restablece y cuenta una ronda 
         if(tiradaEnRonda > 3){
             tiradaEnRonda = 0;
             rondaActual++;
