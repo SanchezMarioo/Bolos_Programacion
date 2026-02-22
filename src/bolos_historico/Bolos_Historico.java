@@ -62,7 +62,7 @@ public class Bolos_Historico {
                     System.out.println("Elije tiro: 1.Normal | 2.Efecto | 3.Potente");
                     int t = Lectura.validarNumero("Selección: ", 1, 3);
                     // Convertimos el 1, 2 o 3 al valor del Enum
-                    TipoTiro tipo = (t == 2) ? TipoTiro.EFECTO : (t == 3) ? TipoTiro.POTENTE : TipoTiro.NORMAL;
+                    TipoTiro tipo = tipo(t);
                     
                     System.out.println("¡Has derribado " +  partida.ejecutarTirada(tipo) + " bolos!");
                 }
@@ -82,5 +82,14 @@ public class Bolos_Historico {
             }
 
         } while (opcion != 4);
+    }
+
+    private static TipoTiro tipo(int t) {
+        return switch (t) {
+            case 1 -> TipoTiro.NORMAL;
+            case 2 -> TipoTiro.EFECTO;
+            case 3 -> TipoTiro.POTENTE;
+            default -> TipoTiro.NORMAL;
+        };
     }
 }
