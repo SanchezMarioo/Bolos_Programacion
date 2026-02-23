@@ -29,6 +29,7 @@ public class Lectura {
             // Comprueba si es un numero
             if (sc.hasNextInt()) {
                 numero = sc.nextInt();
+                // Limpiamos el buffer por si se mete un string luego 
                 sc.nextLine();
                 if (numero >= minimo && numero <= maximo) {
                     // Salida esperada del bucle
@@ -38,7 +39,7 @@ public class Lectura {
                 }
             } else {
                 System.err.println("Error: Debes introducir un número entero.");
-                sc.next(); // Limpiamos el buffer para evitar bucle infinito
+                sc.nextLine(); // Limpiamos el buffer para evitar bucle infinito
             }
         } while (true);
         

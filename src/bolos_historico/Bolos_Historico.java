@@ -15,7 +15,7 @@ public class Bolos_Historico {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("🎳 BIENVENIDO A BOLOS EXPRESS 🎳");
+        System.out.println("BIENVENIDO A BOLOS EXPRESS");
         int jugarDeNuevo;
 
         do {
@@ -60,9 +60,9 @@ public class Bolos_Historico {
             switch (opcion) {
                 case 1 -> {
                     System.out.println("Elije tiro: 1.Normal | 2.Efecto | 3.Potente");
-                    int t = Lectura.validarNumero("Selección: ", 1, 3);
+                    int tiroNum = Lectura.validarNumero("Selección: ", 1, 3);
                     // Convertimos el 1, 2 o 3 al valor del Enum
-                    TipoTiro tipo = tipo(t);
+                    TipoTiro tipo = tipo(tiroNum);
                     
                     System.out.println("¡Has derribado " +  partida.ejecutarTirada(tipo) + " bolos!");
                 }
@@ -76,7 +76,7 @@ public class Bolos_Historico {
 
             // Si la partida termina por rondas, salimos del menú
             if (partida.isFinalizada()) {
-                System.out.println("\n🏆 ¡FIN DE LA PARTIDA! 🏆");
+                System.out.println("\n¡FIN DE LA PARTIDA!");
                 partida.mostrarGanadorFinal(); // Método para decir quién ganó
                 break;
             }
@@ -84,8 +84,8 @@ public class Bolos_Historico {
         } while (opcion != 4);
     }
 
-    private static TipoTiro tipo(int t) {
-        return switch (t) {
+    private static TipoTiro tipo(int tipoTiro) {
+        return switch (tipoTiro) {
             case 1 -> TipoTiro.NORMAL;
             case 2 -> TipoTiro.EFECTO;
             case 3 -> TipoTiro.POTENTE;
